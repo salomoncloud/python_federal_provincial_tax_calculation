@@ -19,7 +19,7 @@ def calculate_federal_tax(income):
     federal_tax += income * 0.15
     
     return federal_tax
-
+federal_tax = calculate_federal_tax(annual_income)
 print(f"Federal Tax: ${federal_tax:.2f}")
 
 def calculate_quebec_tax(income):
