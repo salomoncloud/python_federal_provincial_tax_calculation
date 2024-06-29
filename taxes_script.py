@@ -21,3 +21,26 @@ def calculate_federal_tax(income):
     return federal_tax
 
 print(f"Federal Tax: ${federal_tax:.2f}")
+
+def calculate_quebec_tax(income):
+    quebec_tax = 0
+    
+    if income > 140000:
+        quebec_tax += (income - 140000) * 0.30
+        income = 140000
+    if income > 107838:
+        quebec_tax += (income - 117850) * 0.24
+        income = 117850
+    if income > 98540:
+        quebec_tax += (income - 98540) * 0.20
+        income = 98540
+    if income > 49275:
+        quebec_tax += (income - 49275) * 0.15
+        income = 49275
+    
+    provincial_tax += income * 0.0505
+    
+    return provincial_tax
+
+quebec_tax = calculate_quebec_tax(annual_income)
+print(f"Provincial Tax (Quebec): ${quebec_tax:.2f}")
