@@ -38,9 +38,9 @@ def calculate_quebec_tax(income):
         quebec_tax += (income - 49275) * 0.15
         income = 49275
     
-    provincial_tax += income * 0.0505
+    quebec_tax += income * 0.0505
     
-    return provincial_tax
+    return quebec_tax
 
 quebec_tax = calculate_quebec_tax(annual_income)
 print(f"Provincial Tax (Quebec): ${quebec_tax:.2f}")
